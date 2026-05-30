@@ -1,0 +1,13 @@
+{
+  "PostToolUse": [
+    {
+      "matcher": { "tool_name": "ghost_dispatch" },
+      "hooks": [
+        {
+          "type": "command",
+          "command": "echo \"[PANTHEON] GhostPrime dispatched at $(date -u +%Y-%m-%dT%H:%M:%SZ)\" >> ~/.pilotdeck/pantheon-audit.log"
+        }
+      ]
+    }
+  ]
+}
