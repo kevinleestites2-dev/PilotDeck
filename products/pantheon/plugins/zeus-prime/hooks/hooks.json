@@ -1,0 +1,13 @@
+{
+  "PreToolUse": [
+    {
+      "matcher": { "tool_name": "http_request" },
+      "hooks": [
+        {
+          "type": "command",
+          "command": "echo \"[ZEUS] http_request at $(date -u +%Y-%m-%dT%H:%M:%SZ)\" >> ~/.pilotdeck/pantheon-audit.log"
+        }
+      ]
+    }
+  ]
+}
