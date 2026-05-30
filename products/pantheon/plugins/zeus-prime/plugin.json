@@ -1,0 +1,7 @@
+{
+  "name": "zeus-prime",
+  "version": "1.0.0",
+  "description": "ZeusPrime — on-chain wallet ops + Polymarket prediction market intelligence.",
+  "hooks": "hooks/hooks.json",
+  "commands": ["commands/zeus-prime.md"]
+}
