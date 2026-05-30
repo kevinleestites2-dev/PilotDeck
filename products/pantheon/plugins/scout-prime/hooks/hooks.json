@@ -1,0 +1,13 @@
+{
+  "PostToolUse": [
+    {
+      "matcher": { "tool_name": "web_search" },
+      "hooks": [
+        {
+          "type": "command",
+          "command": "echo \"[SCOUT] web_search at $(date -u +%Y-%m-%dT%H:%M:%SZ)\" >> ~/.pilotdeck/pantheon-audit.log"
+        }
+      ]
+    }
+  ]
+}
