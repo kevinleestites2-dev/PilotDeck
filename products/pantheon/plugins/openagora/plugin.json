@@ -1,0 +1,7 @@
+{
+  "name": "openagora",
+  "version": "1.0.0",
+  "description": "OpenAgora arb engine — query the autonomous arbitrage engine running on Termux via Nexus Relay.",
+  "hooks": "hooks/hooks.json",
+  "commands": ["commands/openagora.md"]
+}
