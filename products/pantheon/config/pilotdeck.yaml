@@ -1,0 +1,60 @@
+# Pantheon — PilotDeck Configuration
+# Merge into ~/.pilotdeck/pilotdeck.yaml
+
+# ── Memory ────────────────────────────────────────────────────────
+memory:
+  enabled: true
+  provider: "edgeclaw"
+  captureStrategy: "full_session"
+  includeAssistant: true
+
+# ── Agent model (Smart Routing enabled) ──────────────────────────
+agent:
+  model:
+    id: "deepseek-r1-free"
+    provider: "openrouter"
+    model: "deepseek/deepseek-r1:free"
+
+# ── Router — Pantheon free-tier smart routing ─────────────────────
+# Complex tasks → DeepSeek R1 (reasoning)
+# General tasks → Llama 3.3 70B
+# Trivial tasks → Gemma 3 27B
+# Target: ~70% cost reduction on OpenRouter free quota
+router:
+  scenarios:
+    default:
+      tiers:
+        - name: "apex"
+          description: "Multi-step reasoning, on-chain strategy, property analysis"
+          model:
+            id: "deepseek-r1-free"
+            provider: "openrouter"
+            model: "deepseek/deepseek-r1:free"
+        - name: "standard"
+          description: "General tasks, content generation, summarization"
+          model:
+            id: "llama-3.3-70b-free"
+            provider: "openrouter"
+            model: "meta-llama/llama-3.3-70b-instruct:free"
+        - name: "fast"
+          description: "Trivial lookups, formatting, simple Q&A"
+          model:
+            id: "gemma-3-27b-free"
+            provider: "openrouter"
+            model: "google/gemma-3-27b-it:free"
+  tokenSaver:
+    enabled: true
+
+# ── Always-on ────────────────────────────────────────────────────
+# Background task discovery — Pantheon keeps working while offline
+alwaysOn:
+  enabled: true
+  discoveryInterval: 3600   # check for new tasks every hour
+  deliverAsFiles: true      # land results to WorkSpace files
+
+# ── Plugins (Pantheon Primes) ─────────────────────────────────────
+plugins:
+  - name: ghost-prime
+  - name: scout-prime
+  - name: zeus-prime
+  - name: openagora
