@@ -1,0 +1,7 @@
+{
+  "name": "ghost-prime",
+  "version": "1.0.0",
+  "description": "GhostPrime swarm control — dispatch, status, and stop the eternal traffic loop via GitHub Actions.",
+  "hooks": "hooks/hooks.json",
+  "commands": ["commands/ghost-prime.md"]
+}
