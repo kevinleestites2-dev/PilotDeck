@@ -1,0 +1,7 @@
+{
+  "name": "scout-prime",
+  "version": "1.0.0",
+  "description": "ScoutPrime — Lee County property intel. LEEPA lookups, tax deed auctions, foreclosure scraping, spread detection.",
+  "hooks": "hooks/hooks.json",
+  "commands": ["commands/scout-prime.md"]
+}
